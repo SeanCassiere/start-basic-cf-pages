@@ -10,6 +10,6 @@ export default defineConfig({
     ],
   },
   deployment: {
-    preset: 'netlify',
+    preset: 'cloudflare-pages',
   },
 })
