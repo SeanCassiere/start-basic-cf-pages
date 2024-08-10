@@ -4,6 +4,6 @@ import { createRouter } from './router'
 
 const router = createRouter()
 
-console.log('hydrating')
-// hydrateRoot(document.getElementById('root')!, <StartClient router={router} />)
-hydrateRoot(document, <StartClient router={router} />)
+console.log('hydrating on the client')
+hydrateRoot(document.getElementById('root')!, <StartClient router={router} />)
+// hydrateRoot(document, <StartClient router={router} />)
