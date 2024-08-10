@@ -12,10 +12,10 @@
     "test:e2e": "playwright test --project=chromium"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.45.8",
-    "@tanstack/router-devtools": "^1.45.8",
-    "@tanstack/router-plugin": "^1.45.8",
-    "@tanstack/start": "^1.45.8",
+    "@tanstack/react-router": "^1.47.1",
+    "@tanstack/router-devtools": "^1.47.1",
+    "@tanstack/router-plugin": "^1.47.0",
+    "@tanstack/start": "^1.47.1",
     "@typescript-eslint/parser": "^7.16.0",
     "@vitejs/plugin-react": "^4.3.1",
     "isbot": "^5.1.12",
@@ -23,7 +23,7 @@
     "react-dom": "^18.3.1",
     "redaxios": "^0.5.1",
     "tailwind-merge": "^2.4.0",
-    "vinxi": "0.3.12",
+    "vinxi": "0.4.1",
     "wrangler": "^3.65.1"
   },
   "devDependencies": {
