@@ -1,1 +1,0 @@
-import{j as t,O as n}from"./client-D22F4JlR.js";const e=function(){return t.jsxs("div",{className:"p-2",children:[t.jsx("div",{children:"I'm a layout"}),t.jsx("div",{children:t.jsx(n,{})})]})};export{e as component};

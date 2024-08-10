@@ -1,1 +1,0 @@
-import{jsxs as t,jsx as o}from"react/jsx-runtime";import{O as r}from"./ssr-DVrxIcU9.js";import"h3";import"node:async_hooks";import"react";import"node:stream";import"isbot";import"react-dom/server";import"react-dom";const u=function(){return t("div",{className:"p-2",children:[o("div",{children:"I'm a layout"}),o("div",{children:o(r,{})})]})};export{u as component};
