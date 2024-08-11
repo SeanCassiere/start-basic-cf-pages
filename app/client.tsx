@@ -6,4 +6,3 @@ const router = createRouter()
 
 console.log('hydrating on the client')
 hydrateRoot(document.getElementById('root')!, <StartClient router={router} />)
-// hydrateRoot(document, <StartClient router={router} />)
