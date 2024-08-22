@@ -9,11 +9,12 @@ import { NotFound } from '~/components/NotFound'
 
 export const Route = createFileRoute('/posts/$postId')({
   loader: async ({ params: { postId } }) => fetchPost(postId),
-  errorComponent: PostErrorComponent as any,
+  errorComponent: PostErrorComponent,
   component: PostComponent,
   notFoundComponent: () => {
     return <NotFound>Post not found</NotFound>
   },
+  meta: ({ loaderData }) => [{ title: `TSS - ${loaderData.title}` }],
 })
 
 export function PostErrorComponent({ error }: ErrorComponentProps) {
