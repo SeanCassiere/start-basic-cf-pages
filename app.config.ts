@@ -4,6 +4,9 @@ import tsConfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   server: {
     preset: 'cloudflare-pages',
+    rollupConfig: {
+      external: ['node:async_hooks'],
+    },
   },
   vite: {
     plugins: [
