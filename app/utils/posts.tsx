@@ -8,7 +8,7 @@ export type PostType = {
   body: string
 }
 
-export const fetchPost = createServerFn()
+export const fetchPost = createServerFn({ method: 'GET' })
   .validator((postId: string) => postId)
   .handler(async ({ data: postId }) => {
     console.info(`Fetching post with id ${postId}...`)
@@ -26,9 +26,11 @@ export const fetchPost = createServerFn()
     return post
   })
 
-export const fetchPosts = createServerFn().handler(async () => {
-  console.info('Fetching posts...')
-  return axios
-    .get<Array<PostType>>('https://jsonplaceholder.typicode.com/posts')
-    .then((r) => r.data.slice(0, 10))
-})
+export const fetchPosts = createServerFn({ method: 'GET' }).handler(
+  async () => {
+    console.info('Fetching posts...')
+    return axios
+      .get<Array<PostType>>('https://jsonplaceholder.typicode.com/posts')
+      .then((r) => r.data.slice(0, 10))
+  },
+)
