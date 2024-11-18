@@ -6,7 +6,13 @@ export const Route = createFileRoute('/posts_/$postId/deep')({
   loader: async ({ params: { postId } }) => fetchPost({ data: postId }),
   errorComponent: PostErrorComponent,
   component: PostDeepComponent,
-  meta: ({ loaderData }) => [{ title: `TSS Deep - ${loaderData.title}` }],
+  head: ({ loaderData }) => ({
+    meta: [
+      {
+        title: `TSS - ${loaderData?.title}`,
+      },
+    ],
+  }),
 })
 
 function PostDeepComponent() {
