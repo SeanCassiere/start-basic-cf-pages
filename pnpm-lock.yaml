@@ -29,6 +29,9 @@ importers:
       tailwind-merge:
         specifier: ^2.4.0
         version: 2.4.0
+      unenv:
+        specifier: ^1.10.0
+        version: 1.10.0
       vinxi:
         specifier: ^0.4.3
         version: 0.4.3(@types/node@20.14.15)(ioredis@5.4.1)(terser@5.31.5)(typescript@5.5.4)
