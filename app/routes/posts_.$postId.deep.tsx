@@ -2,11 +2,17 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { PostErrorComponent } from './posts.$postId'
 import { fetchPost } from '../utils/posts'
 
-export const Route = createFileRoute('/posts/$postId/deep')({
-  loader: async ({ params: { postId } }) => fetchPost(postId),
+export const Route = createFileRoute('/posts_/$postId/deep')({
+  loader: async ({ params: { postId } }) => fetchPost({ data: postId }),
   errorComponent: PostErrorComponent,
   component: PostDeepComponent,
-  meta: ({ loaderData }) => [{ title: `TSS Deep - ${loaderData.title}` }],
+  head: ({ loaderData }) => ({
+    meta: [
+      {
+        title: `TSS - ${loaderData?.title}`,
+      },
+    ],
+  }),
 })
 
 function PostDeepComponent() {
