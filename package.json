@@ -12,31 +12,30 @@
     "test:e2e": "playwright test --project=chromium"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.82.0",
-    "@tanstack/router-devtools": "^1.82.0",
-    "@tanstack/start": "^1.82.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@tanstack/react-router": "^1.97.21",
+    "@tanstack/router-devtools": "^1.97.21",
+    "@tanstack/start": "^1.97.22",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "redaxios": "^0.5.1",
     "tailwind-merge": "^2.4.0",
     "unenv": "^1.10.0",
-    "vinxi": "^0.4.3",
-    "wrangler": "^3.86.0"
+    "vinxi": "^0.5.1",
+    "wrangler": "^3.105.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.1",
+    "@tailwindcss/vite": "^4.0.0",
     "@types/node": "^20.12.11",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/parser": "^7.16.0",
-    "@vitejs/plugin-react": "^4.3.3",
-    "autoprefixer": "^10.4.19",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8.57.0",
     "eslint-config-react-app": "^7.0.1",
-    "postcss": "^8.4.39",
     "prettier": "^3.3.3",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.3",
-    "vite-tsconfig-paths": "^5.1.1"
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.3",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
