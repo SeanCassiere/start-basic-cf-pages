@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   server: {
-    preset: 'cloudflare-pages',
+    preset: 'cloudflare',
     unenv: cloudflare,
   },
   vite: {
