@@ -1,4 +1,6 @@
 name = "start-basic-cf-pages"
-pages_build_output_dir = "./dist"
+# pages_build_output_dir = "./dist"
 compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2024-11-13"
+main = "./.output/server/index.mjs"
+assets = { directory = "./.output/public/", binding = "ASSETS" }

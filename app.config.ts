@@ -1,12 +1,12 @@
 import { defineConfig } from '@tanstack/start/config'
 import tsConfigPaths from 'vite-tsconfig-paths'
-// import { cloudflare } from 'unenv'
+import { cloudflare } from 'unenv'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   server: {
-    preset: 'cloudflare-pages',
-    // unenv: cloudflare,
+    preset: 'cloudflare-module',
+    unenv: cloudflare,
   },
   vite: {
     plugins: [
