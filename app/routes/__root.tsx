@@ -1,5 +1,5 @@
 import { createRootRoute } from '@tanstack/react-router'
-import { Link, Outlet, ScrollRestoration } from '@tanstack/react-router'
+import { Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { Meta, Scripts } from '@tanstack/start'
 import * as React from 'react'
@@ -119,7 +119,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </div>
         <hr />
         {children}
-        <ScrollRestoration />
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
       </body>
