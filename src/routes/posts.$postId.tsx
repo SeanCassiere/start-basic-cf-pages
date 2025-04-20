@@ -5,7 +5,7 @@ import {
   createFileRoute,
 } from '@tanstack/react-router'
 import { fetchPost } from '../utils/posts'
-import { NotFound } from '~/components/NotFound'
+import { NotFound } from 'src/components/NotFound'
 
 export const Route = createFileRoute('/posts/$postId')({
   loader: async ({ params: { postId } }) => fetchPost({ data: postId }),
