@@ -20,7 +20,7 @@
     "redaxios": "^0.5.1",
     "tailwind-merge": "^2.4.0",
     "unenv": "^1.10.0",
-    "vinxi": "^0.5.1",
+    "vinxi": "^0.5.4",
     "wrangler": "^3.105.1"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@typescript-eslint/parser": "^7.16.0",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^8.57.0",
     "eslint-config-react-app": "^7.0.1",
     "prettier": "^3.3.3",
