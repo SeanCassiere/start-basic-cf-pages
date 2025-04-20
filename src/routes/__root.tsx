@@ -3,10 +3,10 @@ import { Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { Meta, Scripts } from '@tanstack/start'
 import * as React from 'react'
-import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
-import { NotFound } from '~/components/NotFound'
+import { DefaultCatchBoundary } from 'src/components/DefaultCatchBoundary'
+import { NotFound } from 'src/components/NotFound'
 import appCss from '~/styles/app.css?url'
-import { seo } from '~/utils/seo'
+import { seo } from 'src/utils/seo'
 
 export const Route = createRootRoute({
   head: () => ({
