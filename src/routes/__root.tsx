@@ -1,8 +1,12 @@
-import { createRootRoute } from '@tanstack/react-router'
-import { Link, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
-import { Meta, Scripts } from '@tanstack/start'
 import * as React from 'react'
+import {
+  createRootRoute,
+  Link,
+  Outlet,
+  HeadContent,
+  Scripts,
+} from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { DefaultCatchBoundary } from 'src/components/DefaultCatchBoundary'
 import { NotFound } from 'src/components/NotFound'
 import appCss from '~/styles/app.css?url'
@@ -70,7 +74,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
-        <Meta />
+        <HeadContent />
       </head>
       <body>
         <div className="p-2 flex gap-2 text-lg">
@@ -119,8 +123,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </div>
         <hr />
         {children}
-        <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
+        <TanStackRouterDevtools position="bottom-right" />
       </body>
     </html>
   )
