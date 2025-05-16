@@ -12,15 +12,14 @@
     "test:e2e": "playwright test --project=chromium"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.116.0",
-    "@tanstack/react-router-devtools": "^1.116.0",
-    "@tanstack/react-start": "^1.116.2",
+    "@tanstack/react-router": "1.120.4-alpha.19",
+    "@tanstack/react-router-devtools": "1.120.4-alpha.19",
+    "@tanstack/react-start": "1.120.4-alpha.24",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "redaxios": "^0.5.1",
     "tailwind-merge": "^2.4.0",
     "unenv": "^1.10.0",
-    "vinxi": "^0.5.4",
     "wrangler": "^3.105.1"
   },
   "devDependencies": {
@@ -37,6 +36,7 @@
     "prettier": "^3.3.3",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3",
+    "vite": "^6.3.5",
     "vite-tsconfig-paths": "^5.1.4"
   }
 }
