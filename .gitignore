@@ -14,7 +14,8 @@ dist
 /api/
 /server/build
 /public/build
-.vinxi
+.tanstack-start/build
+.nitro
 # Sentry Config File
 .env.sentry-build-plugin
 /test-results/

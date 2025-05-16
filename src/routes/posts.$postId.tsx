@@ -1,8 +1,8 @@
+import { createFileRoute } from '@tanstack/react-router'
 import {
   ErrorComponent,
   ErrorComponentProps,
   Link,
-  createFileRoute,
 } from '@tanstack/react-router'
 import { fetchPost } from '../utils/posts'
 import { NotFound } from 'src/components/NotFound'
@@ -17,7 +17,7 @@ export const Route = createFileRoute('/posts/$postId')({
   head: ({ loaderData }) => ({
     meta: [
       {
-        title: `TSS - ${loaderData?.title}`,
+        title: `TSS Post - ${loaderData?.title}`,
       },
     ],
   }),
