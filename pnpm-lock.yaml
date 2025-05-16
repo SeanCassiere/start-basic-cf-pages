@@ -62,7 +62,7 @@ importers:
         version: 8.57.0
       eslint-config-react-app:
         specifier: ^7.0.1
-        version: 7.0.1(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.0))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.0))(eslint@8.57.0)(typescript@5.7.3)
+        version: 7.0.1(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.10))(eslint@8.57.0)(typescript@5.7.3)
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -6000,6 +6000,11 @@ snapshots:
       '@babel/core': 7.26.0
       '@babel/helper-plugin-utils': 7.25.9
 
+  '@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.10)':
+    dependencies:
+      '@babel/core': 7.26.10
+      '@babel/helper-plugin-utils': 7.25.9
+
   '@babel/plugin-syntax-import-assertions@7.24.7(@babel/core@7.26.0)':
     dependencies:
       '@babel/core': 7.26.0
@@ -6388,6 +6393,17 @@ snapshots:
       '@babel/helper-module-imports': 7.25.9
       '@babel/helper-plugin-utils': 7.25.9
       '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.0)
+      '@babel/types': 7.26.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.10)':
+    dependencies:
+      '@babel/core': 7.26.10
+      '@babel/helper-annotate-as-pure': 7.24.7
+      '@babel/helper-module-imports': 7.25.9
+      '@babel/helper-plugin-utils': 7.25.9
+      '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.26.10)
       '@babel/types': 7.26.0
     transitivePeerDependencies:
       - supports-color
@@ -9098,7 +9114,7 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.0))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.0))(eslint@8.57.0)(typescript@5.7.3):
+  eslint-config-react-app@7.0.1(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.10))(eslint@8.57.0)(typescript@5.7.3):
     dependencies:
       '@babel/core': 7.26.0
       '@babel/eslint-parser': 7.25.1(@babel/core@7.26.0)(eslint@8.57.0)
@@ -9108,7 +9124,7 @@ snapshots:
       babel-preset-react-app: 10.0.1
       confusing-browser-globals: 1.0.11
       eslint: 8.57.0
-      eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.0))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.0))(eslint@8.57.0)
+      eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.10))(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@5.62.0(eslint@8.57.0)(typescript@5.7.3))(eslint@8.57.0)
       eslint-plugin-jest: 25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.0)(typescript@5.7.3))(eslint@8.57.0)(typescript@5.7.3))(eslint@8.57.0)(typescript@5.7.3)
       eslint-plugin-jsx-a11y: 6.9.0(eslint@8.57.0)
@@ -9143,10 +9159,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-flowtype@8.0.3(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.0))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.0))(eslint@8.57.0):
+  eslint-plugin-flowtype@8.0.3(@babel/plugin-syntax-flow@7.24.7(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.26.10))(eslint@8.57.0):
     dependencies:
-      '@babel/plugin-syntax-flow': 7.24.7(@babel/core@7.26.0)
-      '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.26.0)
+      '@babel/plugin-syntax-flow': 7.24.7(@babel/core@7.26.10)
+      '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.26.10)
       eslint: 8.57.0
       lodash: 4.17.21
       string-natural-compare: 3.0.1
