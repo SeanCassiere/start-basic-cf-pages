@@ -17,7 +17,7 @@ export const Route = createFileRoute('/posts/$postId')({
   head: ({ loaderData }) => ({
     meta: [
       {
-        title: `TSS - ${loaderData?.title}`,
+        title: `TSS Post - ${loaderData?.title}`,
       },
     ],
   }),

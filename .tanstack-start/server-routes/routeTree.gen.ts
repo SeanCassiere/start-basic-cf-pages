@@ -19,74 +19,112 @@ import {
   createServerFileRoute,
 } from '@tanstack/react-start/server'
 
-import { ServerRoute as ApiPostsRouteImport } from './../../src/routes/api.posts'
+import { ServerRoute as ApiUsersRouteImport } from './../../src/routes/api.users'
+import { ServerRoute as ApiUsersIdRouteImport } from './../../src/routes/api/users.$id'
 
 // Create/Update Routes
 
 const rootRoute = createServerRoute()
 
-const ApiPostsRoute = ApiPostsRouteImport.update({
-  id: '/api/posts',
-  path: '/api/posts',
+const ApiUsersRoute = ApiUsersRouteImport.update({
+  id: '/api/users',
+  path: '/api/users',
   getParentRoute: () => rootRoute,
+} as any)
+
+const ApiUsersIdRoute = ApiUsersIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiUsersRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-start/server' {
   interface FileRoutesByPath {
-    '/api/posts': {
-      id: '/api/posts'
-      path: '/api/posts'
-      fullPath: '/api/posts'
-      preLoaderRoute: typeof ApiPostsRouteImport
+    '/api/users': {
+      id: '/api/users'
+      path: '/api/users'
+      fullPath: '/api/users'
+      preLoaderRoute: typeof ApiUsersRouteImport
       parentRoute: typeof rootRoute
+    }
+    '/api/users/$id': {
+      id: '/api/users/$id'
+      path: '/$id'
+      fullPath: '/api/users/$id'
+      preLoaderRoute: typeof ApiUsersIdRouteImport
+      parentRoute: typeof ApiUsersRouteImport
     }
   }
 }
 
 // Add type-safety to the createFileRoute function across the route tree
 
-declare module './../../src/routes/api.posts' {
+declare module './../../src/routes/api.users' {
   const createServerFileRoute: CreateServerFileRoute<
-    FileRoutesByPath['/api/posts']['parentRoute'],
-    FileRoutesByPath['/api/posts']['id'],
-    FileRoutesByPath['/api/posts']['path'],
-    FileRoutesByPath['/api/posts']['fullPath'],
+    FileRoutesByPath['/api/users']['parentRoute'],
+    FileRoutesByPath['/api/users']['id'],
+    FileRoutesByPath['/api/users']['path'],
+    FileRoutesByPath['/api/users']['fullPath'],
+    ApiUsersRouteChildren
+  >
+}
+declare module './../../src/routes/api/users.$id' {
+  const createServerFileRoute: CreateServerFileRoute<
+    FileRoutesByPath['/api/users/$id']['parentRoute'],
+    FileRoutesByPath['/api/users/$id']['id'],
+    FileRoutesByPath['/api/users/$id']['path'],
+    FileRoutesByPath['/api/users/$id']['fullPath'],
     unknown
   >
 }
 
 // Create and export the route tree
 
+interface ApiUsersRouteChildren {
+  ApiUsersIdRoute: typeof ApiUsersIdRoute
+}
+
+const ApiUsersRouteChildren: ApiUsersRouteChildren = {
+  ApiUsersIdRoute: ApiUsersIdRoute,
+}
+
+const ApiUsersRouteWithChildren = ApiUsersRoute._addFileChildren(
+  ApiUsersRouteChildren,
+)
+
 export interface FileRoutesByFullPath {
-  '/api/posts': typeof ApiPostsRoute
+  '/api/users': typeof ApiUsersRouteWithChildren
+  '/api/users/$id': typeof ApiUsersIdRoute
 }
 
 export interface FileRoutesByTo {
-  '/api/posts': typeof ApiPostsRoute
+  '/api/users': typeof ApiUsersRouteWithChildren
+  '/api/users/$id': typeof ApiUsersIdRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  '/api/posts': typeof ApiPostsRoute
+  '/api/users': typeof ApiUsersRouteWithChildren
+  '/api/users/$id': typeof ApiUsersIdRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/api/posts'
+  fullPaths: '/api/users' | '/api/users/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/api/posts'
-  id: '__root__' | '/api/posts'
+  to: '/api/users' | '/api/users/$id'
+  id: '__root__' | '/api/users' | '/api/users/$id'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  ApiPostsRoute: typeof ApiPostsRoute
+  ApiUsersRoute: typeof ApiUsersRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  ApiPostsRoute: ApiPostsRoute,
+  ApiUsersRoute: ApiUsersRouteWithChildren,
 }
 
 export const routeTree = rootRoute
@@ -99,11 +137,18 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/api/posts"
+        "/api/users"
       ]
     },
-    "/api/posts": {
-      "filePath": "api.posts.tsx"
+    "/api/users": {
+      "filePath": "api.users.tsx",
+      "children": [
+        "/api/users/$id"
+      ]
+    },
+    "/api/users/$id": {
+      "filePath": "api/users.$id.tsx",
+      "parent": "/api/users"
     }
   }
 }
