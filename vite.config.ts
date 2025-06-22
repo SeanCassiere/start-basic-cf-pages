@@ -12,16 +12,13 @@ export default defineConfig({
     }),
     tanstackStart({
       target: 'cloudflare-pages',
-      tsr: {
-        verboseFileRoutes: true,
-      },
-      prerender: {
-        enabled: true,
-      },
-      pages: [
-        { path: '/', prerender: { enabled: true, crawlLinks: false } },
-        { path: '/posts', prerender: { enabled: true, crawlLinks: false } },
-      ],
+      // prerender: {
+      //   enabled: true,
+      // },
+      // pages: [
+      //   { path: '/', prerender: { enabled: true, crawlLinks: false } },
+      //   { path: '/posts', prerender: { enabled: true, crawlLinks: false } },
+      // ],
     }),
   ],
 })
